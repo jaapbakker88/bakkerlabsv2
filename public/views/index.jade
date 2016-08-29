@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  header.welcome
+    h1.text-center 
+      | Hi, you've reached Bakker Labs.
+      br
+      |How may I help you?
+    
+  .wrapper
+    .container
+      .row
+        .col-md-10.col-md-offset-1.box
+        
+          form.form-inline
+            .form-group
+              p Hi, my name is &nbsp;
+              input.form-control#firstName(type="text" placeholder="John Degenkolb")
+              p . I'm looking for someone to help me with 
+              select.form-control#projectType
+                option(value="" disabled selected) project type
+                option(value="webdesign") Webdesign
+                option(value="consultation") Consultation
+                option(value="squarespace") Squarespace
+              p . Here's a short 
+              textarea.form-control#description(rows="1" cols="50" placeholder="description")
+              p &nbsp; of what I have in mind. My budget is around &nbsp;
+              .input-group
+                .input-group-addon €
+                input.form-control#budget(type="text" placeholder="1.000" size="7")
+                .input-group-addon ,-
+              p . You can reach  me at &nbsp;
+                input.form-control#email(type="text" placeholder="myemail@example.com")
+              p .
+            button.btn.btn-primary.submit-enquiry.center-block Submit enquiry
