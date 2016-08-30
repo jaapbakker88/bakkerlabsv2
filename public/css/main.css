@@ -21,7 +21,7 @@ h1, h2, h3, h4 {
 }
 
 .wrapper {
-    background: url('../images/bg.png') top left repeat;
+    background: url('../images/bg2.png') top left repeat;
 }
 
 .welcome{
@@ -107,5 +107,26 @@ h1, h2, h3, h4 {
 }
 
 .information #map {
-  height: 200px;
+  height: 225px;
 }
+
+.footer {
+  margin: 0;
+  padding: 0;
+}
+.footer p {
+  text-align: right;
+  font-size: 0.70em;
+  font-weight: 600;
+  color: #ddd;
+  margin: 0;
+}
+.footer hr {margin-bottom: 0;}
+
+/* simple grid */
+.s-grid {width: 100%;}
+.s-grid:after {content: ""; display: table; clear: both;}
+.third, .half, .quarter, .fifth{float: left;}
+.third {width: 33.33%;}
+.quarter {width: 25%;}
+.fifth {width: 20%;}
