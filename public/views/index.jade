@@ -14,7 +14,7 @@ block content
           
         
           if locals.success
-            div(class=alert)
+            div.alert.alert-success
               p <strong>FLASH!</strong> #{success}      
           else
             form.form-inline(action="/", method="POST")
