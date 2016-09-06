@@ -17,7 +17,7 @@ block content
             div.alert.alert-success
               p <strong>FLASH!</strong> #{success}      
           else
-            form.form-inline(action="/", method="POST")
+            form.form-inline#inquiry(action="/submit", method="POST")
               .form-group
                 p Hi, my name is &nbsp;
                 input.form-control#firstName(type="text" name="name" placeholder="John Degenkolb")
@@ -37,7 +37,7 @@ block content
                 p . You can reach  me at &nbsp;
                   input.form-control#email(type="text" name="email" placeholder="myemail@example.com")
                 p .
-              button.btn.btn-primary.center-block Submit enquiry
+              button#submit-enquiry.btn.btn-primary.center-block Submit enquiry
   .container.information
     .row
       .col-md-8

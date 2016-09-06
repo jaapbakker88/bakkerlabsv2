@@ -14,7 +14,7 @@ var auth = {
   }
 }
 
-router.post('/', function (req, res) {
+router.post('/submit', function (req, res) {
     var nodemailerMailgun = nodemailer.createTransport(mg(auth))
 
     var mailOptions = {
@@ -27,10 +27,10 @@ router.post('/', function (req, res) {
     nodemailerMailgun.sendMail(mailOptions, function(error, response){
         if(error){
             console.log(error);
-            res.render("index");
+            res.send(false);
         }else{
             console.log("Message sent: " + response.message);
-            res.render("index", { success: "Your message was sent succesfully, we'll be with you shortly." });
+            res.send(true);
         }
     });
 

@@ -22,4 +22,4 @@ app.listen(1337, function () {
 
 app.get('/', router);
 
-app.post('/', router);
+app.post('/submit', router);
