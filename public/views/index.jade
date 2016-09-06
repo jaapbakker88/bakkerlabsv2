@@ -7,32 +7,37 @@ block content
       br
       |How may I help you?
     
-  .wrapper
+  #contact-wrapper
     .container
       .row
         .col-md-10.col-md-offset-1.box
+          
         
-          form.form-inline(action="/", method="POST")
-            .form-group
-              p Hi, my name is &nbsp;
-              input.form-control#firstName(type="text" name="name" placeholder="John Degenkolb")
-              p . I'm looking for someone to help me with 
-              select.form-control#projectType(name="projectType")
-                option(value="" disabled selected) project type
-                option(value="webdesign") Webdesign
-                option(value="consultation") Consultation
-                option(value="squarespace") Squarespace
-              p . Here's a short 
-              textarea.form-control#description(name="description" rows="1" cols="50" placeholder="description")
-              p &nbsp; of what I have in mind. My budget is around &nbsp;
-              .input-group
-                .input-group-addon €
-                input.form-control#budget(type="text" name="budget" placeholder="10.000" size="7")
-                .input-group-addon ,-
-              p . You can reach  me at &nbsp;
-                input.form-control#email(type="text" name="email" placeholder="myemail@example.com")
-              p .
-            button.btn.btn-primary.submit-enquiry.center-block Submit enquiry
+          if locals.success
+            div(class=alert)
+              p <strong>FLASH!</strong> #{success}      
+          else
+            form.form-inline(action="/", method="POST")
+              .form-group
+                p Hi, my name is &nbsp;
+                input.form-control#firstName(type="text" name="name" placeholder="John Degenkolb")
+                p . I'm looking for someone to help me with 
+                select.form-control#projectType(name="projectType")
+                  option(value="" disabled selected) project type
+                  option(value="webdesign") Webdesign
+                  option(value="consultation") Consultation
+                  option(value="squarespace") Squarespace
+                p . Here's a short 
+                textarea.form-control#description(name="description" rows="1" cols="50" placeholder="description")
+                p &nbsp; of what I have in mind. My budget is around &nbsp;
+                .input-group
+                  .input-group-addon €
+                  input.form-control#budget(type="text" name="budget" placeholder="10.000" size="7")
+                  .input-group-addon ,-
+                p . You can reach  me at &nbsp;
+                  input.form-control#email(type="text" name="email" placeholder="myemail@example.com")
+                p .
+              button.btn.btn-primary.center-block Submit enquiry
   .container.information
     .row
       .col-md-8
