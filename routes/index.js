@@ -21,7 +21,7 @@ router.post('/submit', function (req, res) {
         from: req.body.email, // sender address
         to: "hello@bakkerlabs.nl", // list of receivers
         subject: "inquiry regarding " + req.body.projectType, // Subject line
-        text: req.body.description + " and my budget is " + req.body.budget, // plaintext body
+        text: "Hi, my name is " + req.body.name + ". \n\nI am looking for someone to help me with the following: \n\n" + req.body.description + "\n\n My budget is: " + req.body.budget, // plaintext body
     }
 
     nodemailerMailgun.sendMail(mailOptions, function(error, response){
