@@ -25,28 +25,26 @@ function initMap() {
 $(function(){
   $('#submit-enquiry').click(function(e){
     e.preventDefault();
-    console.log('button clicked');
 
+    // create object from form data
     var data = $('#inquiry').serializeArray().reduce(function(obj, item) {
       obj[item.name] = item.value;
       return obj;
     }, {});
 
-    console.log(data)
-
-    // var data = {};
-    // data.title = "title";
-    // data.message = "message";
-
+    // send object to Express submit route
     $.ajax({
       type: 'POST',
       data: JSON.stringify(data),
       contentType: 'application/json',
       url: '/submit',
       success: function(data) {
-        console.log('success');
         console.log(JSON.stringify(data));
-        $('.box').addClass('flipped');
+          if (data) {
+            $('.box').addClass('success');
+          } else if (JSON.stringify(data) === 'false') {
+            alert('Warning')
+          }
       }
     });
 
