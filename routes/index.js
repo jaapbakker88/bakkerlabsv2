@@ -1,3 +1,5 @@
+"use strict";
+
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
@@ -27,10 +29,10 @@ router.post('/submit', function (req, res) {
     nodemailerMailgun.sendMail(mailOptions, function(error, response){
         if(error){
             console.log(error);
-            res.send(false);
+            res.send({"error": true, "message": response.message});
         }else{
             console.log("Message sent: " + response.message);
-            res.send(true);
+            res.send({"error": false, "message": response.message});
         }
     });
 

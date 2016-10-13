@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var express = require('express');
 var path = require('path');
@@ -20,6 +20,6 @@ app.listen(1337, function () {
   console.log('Server is running on port 1337...')
 });
 
-app.get('/', router);
+app.use('/', router);
 
-app.post('/submit', router);
+app.use('/submit', router);

@@ -41,8 +41,10 @@ $(function(){
       success: function(data) {
         console.log(JSON.stringify(data));
           if (data) {
-            $('.box').addClass('success');
+            console.log(data)
+            $('.inquiry').addClass('hidden');
           } else if (JSON.stringify(data) === 'false') {
+            console.log(data)
             alert('Warning')
           }
       }
